@@ -2,6 +2,7 @@ import user_icon from "../assets/user.png";
 import email_icon from "../assets/email.png";
 import password_icon from "../assets/password.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const [form, setForm] = useState({
@@ -48,19 +49,18 @@ function SignUp() {
   }
 
   return (
-    <div
-      className="flex justify-center size- 40 max-auto
-    h-180 p-6 "
-    >
-      <h1 className="text-4xl font-bold">DevHub</h1>
+    <div className="min-h-screen flex flex-col items-center p-20 bg-gray-50">
+      <h1 className="text-4xl font-bold p-5">DevHub</h1>
       <form
         onSubmit={handleSubmit}
-        className="p-10 text-center bg-gray-200 border- w-120"
+        className="w-full p-6 text-left bg-white rounded-2xl font-medium max-w-[500px]"
       >
-        <h2 className="text-3xl font-bold text-black mb-4 ">
-          Create Your Account
-        </h2>
-        <p>Start your learning Journey today</p>
+        <h1 className="mb-1 text-lg font-semibold text-gray-800 ">
+          Create Your Account{" "}
+        </h1>
+        <p className="mb-4 text-sm text-gray-500">
+          Start your learning journey today
+        </p>
 
         <div className="text-left">
           <div className="mb-3">
@@ -73,13 +73,13 @@ function SignUp() {
               placeholder="John DOe"
               value={form.name}
               onChange={handleChange}
-              className="w-full mb-3 p-2 border rounded"
+              className="w-full py-2 px-3 rounded-xl bg-gray-100"
             />
           </div>
 
           <div className="mb-3">
             <img src={email_icon} alt="email-icon" className="w-6 h-6" />
-            <label for="email">Eamil </label>
+            <label for="email">Email </label>
             <br />
             <input
               type="email"
@@ -87,7 +87,7 @@ function SignUp() {
               placeholder="you@example.com"
               value={form.email}
               onChange={handleChange}
-              className="w-full mb-3 py-3 border rounded"
+              className="w-full py-2 px-3 rounded-xl bg-gray-100"
             />
           </div>
 
@@ -101,7 +101,7 @@ function SignUp() {
               placeholder="Password"
               value={form.password}
               onChange={handleChange}
-              className="w-full mb-3 py-3 border rounded"
+              className="w-full py-2 px-3 rounded-xl bg-gray-100"
             />
           </div>
 
@@ -115,7 +115,7 @@ function SignUp() {
               placeholder="Confirm Password"
               value={form.confirmPassword}
               onChange={handleChange}
-              className="w-full mb-3 p-2 border rounded"
+              className="w-full py-2 px-3 rounded-xl bg-gray-100"
             />
           </div>
 
@@ -123,10 +123,15 @@ function SignUp() {
             Create Account
           </button>
 
-          <p className="text-sm mt-3 text-center ">Already have an account? </p>
-          <Link to="/" className="text-blue-500">
-            Login
-          </Link>
+          <div className="text-center mt-3">
+            <span className="text-sm text-gray-500">
+              Already have an account?{" "}
+            </span>
+            {""}
+            <Link to="/login" className="text-blue-500 hover:underline">
+              Sign In
+            </Link>
+          </div>
         </div>
       </form>
     </div>

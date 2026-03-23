@@ -6,13 +6,10 @@ import { Routes, Route, Link } from "react-router-dom";
 function Landing() {
   return (
     <div className="text-center">
-      <div
-        className="sticky top-0 flex justify-around w-full p-4 border-2  bg-white
-      "
-      >
+      <div className="sticky top-0 flex justify-around w-full p-4 border-2  bg-white">
         <Link to="" className="text-4xl font-bold">
           {" "}
-          DevHub
+          DevHub{" "}
         </Link>
 
         <nav className=" flex ">
@@ -20,24 +17,25 @@ function Landing() {
             to="/login"
             className=" hover:bg-gray-300 bg-white hover:underline rounded-xl text-black py-3 px-3 font-mediun w-full sm:w-auto gap-4"
           >
-            Log In
+            Log In{" "}
           </Link>
 
           <Link
             to="/signup"
-            className="hover:bg-zinc-700  py-3 px-3 hover:underline bg-slate-900 rounded-xl text-white font-medium w-full sm:w-auto"
+            className="hover:bg-zinc-700 py-3 px-3 hover:underline bg-slate-900 rounded-xl text-white font-medium w-full sm:w-auto"
           >
             Get Started
           </Link>
         </nav>
       </div>
 
-      <div className="bg-sky-500/10 py-20 px-4 text-center flex-col items-center justify-center  ">
+      <div className="bg-gray-50 py-20 px-4 text-center flex-col items-center justify-center  ">
         <div className=" max-w-3xl w-full mx-auto space-y-6 ">
           <h1 className="text-4xl  md:text-6xl text-gray-900 font-bold font-sans mb-3">
             Learn Anything, <br />
             <span className="text-blue-500">Anything, Anywhere</span>
           </h1>
+
           <p className="max-w-2xl mx-auto text-lg text-gray-500  mb-6 ">
             Join thousands of learners mastering new skills with our
             comprehensive online courses. Expert instructors, flexible learning,
@@ -56,6 +54,7 @@ function Landing() {
 
         <div>
           <h2 className="text-4xl font-bold text-black mb-10 ">
+            {" "}
             Why Choose LearnHub?{" "}
           </h2>
         </div>
@@ -97,7 +96,7 @@ function Landing() {
         </button>
       </div>
 
-      <div className="border-none p-6 bg-sky-500/10 max-w-full m-0-auto">
+      <div className="border-none p-6 bg-gray-50 max-w-full m-0-auto">
         @2026 DevHub. All rights reserved.
       </div>
     </div>

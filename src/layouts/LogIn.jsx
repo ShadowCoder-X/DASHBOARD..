@@ -1,10 +1,9 @@
 import { useState } from "react";
-
+import { Link } from "react-router-dom";
 function Login() {
   const [form, setForm] = useState({
     email: "",
     password: "",
-    remember: false,
   });
 
   function handleChange(e) {
@@ -40,12 +39,19 @@ function Login() {
   }
 
   return (
-    <div className="flex justify-center  w-full max-w-3xl mx-auto space-y-6  p-20  ">
+    <div className="min-h-screen flex flex-col items-center p-30 bg-gray-50">
+      <h2 className="text-3xl p-5 font-semibold  text-center ">DevHub</h2>
+
       <form
         onSubmit={handleSubmit}
-        className="p-10 text-center bg-gray-200 rounded-xl "
+        className="w-full p-6 text-left bg-white rounded-2xl font-medium max-w-[500px]"
       >
-        <h2 className="text-3xl font-bold text-black mb-4 ">DevHub</h2>
+        <h1 className="mb-1 text-lg font-semibold text-gray-800 ">
+          Welcome Back
+        </h1>
+        <p className="mb-4 text-sm text-gray-500">
+          Sign in to your account to continue learning
+        </p>
 
         <div className="text-left">
           <div className="mb-4">
@@ -56,12 +62,13 @@ function Login() {
               placeholder="you@example.com"
               value={form.email}
               onChange={handleChange}
-              className="w-full mb-3 p-2 border rounded"
+              className="w-full py-2 px-3 rounded-xl bg-gray-100"
+              required
             />
           </div>
 
           <div>
-            <div className="mb-4 flex flex- cols justify-between">
+            <div className="flex flex- cols justify-between">
               <label for="password">Password: </label>
 
               <Link
@@ -78,34 +85,23 @@ function Login() {
               placeholder="Password"
               value={form.password}
               onChange={handleChange}
-              className="w-full mb-3 p-2 border rounded"
+              className="w-full py-2 px-3 rounded-xl bg-gray-100"
               required
             />
           </div>
 
-          <div className="flex justify-between items-center mb-3">
-            <label>
-              <input
-                type="checkbox"
-                name="remember"
-                checked={form.remember}
-                onChange={handleChange}
-                className="w-full mb-3 p-2 border rounded"
-              />
-              {""}
-              Remember Me
-            </label>
-          </div>
-
-          <button className="mb-3 w-full bg-slate-900 text-white py-3 px-5 rounded cursor-pointer">
-            Login
+          <button className=" mt-3 mb-3 w-full bg-slate-900 text-white py-3 px-5 rounded cursor-pointer hover:bg-zinc-700">
+            Sign In
           </button>
 
-          <p className="text-sm mt-3 text-center">Don't have an account?</p>
-
-          <a href="/login" className="text-gray-500">
-            Sign Up
-          </a>
+          <div className="text-center ">
+            <span className="text-sm mt-3 text-gray-500">
+              Don't have an account?
+            </span>{" "}
+            <Link to="/signup" className="text-blue-500 hover:underline">
+              Sign Up
+            </Link>
+          </div>
         </div>
       </form>
     </div>
