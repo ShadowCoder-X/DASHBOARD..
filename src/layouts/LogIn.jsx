@@ -44,7 +44,7 @@ function Login() {
 
       <form
         onSubmit={handleSubmit}
-        className="w-full p-6 text-left bg-white rounded-2xl font-medium max-w-[500px]"
+        className="w-full p-6 text-left bg-white rounded-2xl font-medium max-w-125"
       >
         <h1 className="mb-1 text-lg font-semibold text-gray-800 ">
           Welcome Back
@@ -73,7 +73,7 @@ function Login() {
 
               <Link
                 to="/forgotpassword"
-                className="text-sm text-sky-500/100 hover:underline"
+                className="text-sm text-sky-500 font-medium hover:underline"
               >
                 Forgot Password?
               </Link>
@@ -90,7 +90,7 @@ function Login() {
             />
           </div>
 
-          <button className=" mt-3 mb-3 w-full bg-slate-900 text-white py-3 px-5 rounded cursor-pointer hover:bg-zinc-700">
+          <button className=" mt-3 mb-3 w-full bg-slate-900 text-white py-3 px-5 rounded-2xl cursor-pointer hover:bg-zinc-700">
             Sign In
           </button>
 

@@ -53,7 +53,7 @@ function SignUp() {
       <h1 className="text-4xl font-bold p-5">DevHub</h1>
       <form
         onSubmit={handleSubmit}
-        className="w-full p-6 text-left bg-white rounded-2xl font-medium max-w-[500px]"
+        className="w-full p-6 text-left bg-white rounded-2xl font-medium max-w-125"
       >
         <h1 className="mb-1 text-lg font-semibold text-gray-800 ">
           Create Your Account{" "}

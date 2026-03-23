@@ -36,37 +36,41 @@ function ForgotPassword() {
   }
 
   return (
-    <div>
-      <div>
-        <form onSubmit={handleSubmit} className="">
-          <h2>Forgot Password</h2>
+    <div className="min-h-screen flex flex-col items-center p-30 bg-gray-50">
+      <h1 className="text-3xl p-5 font-semibold  text-center">DevHub</h1>
+      <form
+        onSubmit={handleSubmit}
+        className="w-full p-6 text-left bg-white rounded-2xl font-medium max-w-125"
+      >
+        <h2 className="mb-1 text-lg font-semibold text-gray-800">
+          Reset Your Password
+        </h2>
 
-          <p className="text-xl font-bold mb-4">
-            Enter your email to receive a reset link
-          </p>
+        <p className="mb-4 text-sm text-gray-500">
+          Enter your email to receive a reset link
+        </p>
 
+        <div>
           <div>
-            <div>
-              <label>Email</label>
-              <input
-                type="text"
-                name="email"
-                placeholder="Enter your email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                className="w-full mb-3 p-2 border rounded"
-                required
-              />
-            </div>
-
-            <button type="submit" className="" disabled={loading}>
-              {loading ? "Sending..." : "Reset Password"}{" "}
-            </button>
-
-            {message && <p className="">{message}</p>}
+            <label>Email</label>
+            <input
+              type="text"
+              name="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full py-2 px-3 rounded-xl bg-gray-100"
+              required
+            />
           </div>
-        </form>
-      </div>
+
+          <button type="submit" className="" disabled={loading}>
+            {loading ? "Sending..." : "Reset Password"}{" "}
+          </button>
+
+          {message && <p className="">{message}</p>}
+        </div>
+      </form>
     </div>
   );
 }
