@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import devhub from "../assets/devhub.png";
+
 function Login() {
   const [form, setForm] = useState({
     email: "",
@@ -40,11 +42,13 @@ function Login() {
 
   return (
     <div className="min-h-screen flex flex-col items-center p-30 bg-gray-50">
-      <h2 className="text-3xl p-5 font-semibold  text-center ">DevHub</h2>
-
+      <div className="flex gap-3">
+        <h2 className="text-3xl p-5 font-semibold  text-center ">DevHub</h2>
+        <img src={devhub} alt="Devhub icon" className="w-13 h-13" />
+      </div>
       <form
         onSubmit={handleSubmit}
-        className="w-full p-6 text-left bg-white rounded-2xl font-medium max-w-125"
+        className="w-full p-6 text-left mb-6  bg-white rounded-2xl font-medium max-w-125"
       >
         <h1 className="mb-1 text-lg font-semibold text-gray-800 ">
           Welcome Back
@@ -104,6 +108,13 @@ function Login() {
           </div>
         </div>
       </form>
+
+      <Link
+        to="/"
+        className="text-sm text-gray-500 hover:underline hover:bg-blue-100 "
+      >
+        Back to home
+      </Link>
     </div>
   );
 }

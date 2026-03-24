@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
+import devhub from "../assets/devhub.png";
 import LogIn from "../layouts/LogIn";
 import expert from "../assets/expert.png";
 import flexible from "../assets/flexible.png";
@@ -9,10 +10,13 @@ function Landing() {
   return (
     <div className="text-center">
       <div className="sticky top-0 flex justify-around w-full p-4 border-2  bg-white">
-        <Link to="" className="text-4xl font-bold">
-          {" "}
-          DevHub{" "}
-        </Link>
+        <div className=" flex gap-4">
+          <Link to="" className="text-4xl font-bold ">
+            {" "}
+            DevHub{" "}
+          </Link>
+          <img src={devhub} alt="Devhub icon" className="w-13 h-13" />
+        </div>
 
         <nav className=" flex ">
           <Link
