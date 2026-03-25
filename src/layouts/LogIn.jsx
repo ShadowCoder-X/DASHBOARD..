@@ -26,7 +26,6 @@ function Login() {
           method: "POST",
           header: { "Content-Type": "Application/json" },
           body: JSON.stringify({
-            name: form.name,
             email: form.email,
             password: form.password,
           }),
@@ -102,7 +101,11 @@ function Login() {
             <span className="text-sm mt-3 text-gray-500">
               Don't have an account?
             </span>{" "}
-            <Link to="/signup" className="text-blue-500 hover:underline">
+            <Link
+              // to="/signup"
+              to="/dashboard"
+              className="text-blue-500 hover:underline"
+            >
               Sign Up
             </Link>
           </div>

@@ -30,7 +30,7 @@ function Landing() {
             to="/signup"
             className="hover:bg-zinc-700 py-3 px-3 hover:underline bg-slate-900 rounded-xl text-white font-medium w-full sm:w-auto"
           >
-            Get Started
+            Sign Up{" "}
           </Link>
         </nav>
       </div>

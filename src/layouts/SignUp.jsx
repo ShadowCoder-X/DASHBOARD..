@@ -69,7 +69,7 @@ function SignUp() {
         <div className="text-left">
           <div className="mb-3">
             <img src={user_icon} alt="user-icon" className="w-6 h-6" />
-            <label for="full-name">Full Name </label>
+            <label htmlFor="full-name">Full Name </label>
             <br />
             <input
               type="text"
@@ -83,7 +83,7 @@ function SignUp() {
 
           <div className="mb-3">
             <img src={email_icon} alt="email-icon" className="w-6 h-6" />
-            <label for="email">Email </label>
+            <label htmlFor="email">Email </label>
             <br />
             <input
               type="email"
@@ -97,7 +97,7 @@ function SignUp() {
 
           <div className="mb-3">
             <img src={password_icon} alt="password-icon" className="h-6 w-6" />
-            <label for="password">Password: </label>
+            <label htmlFor="password">Password: </label>
             <br />
             <input
               type="password"
@@ -111,7 +111,7 @@ function SignUp() {
 
           <div className="mb-3">
             <img src={password_icon} alt="password-icon" className="w-6 h-6" />
-            <label for="confirm-password">Confirm Password: </label>
+            <label htmlFor="confirm-password">Confirm Password: </label>
             <br />
             <input
               type="password"
@@ -123,9 +123,14 @@ function SignUp() {
             />
           </div>
 
-          <button className="w-full bg-slate-900 text-white py-3 rounded cursor-pointer">
-            Create Account
-          </button>
+          <div className=" mt-3 mb-3 flex ">
+            <button
+              to="/dashboard"
+              className="cursor-pointer w-full text-center bg-slate-900 text-white py-3 rounded-2xl hover:bg-zinc-700"
+            >
+              Create Account
+            </button>
+          </div>
 
           <div className="text-center mt-3">
             <span className="text-sm text-gray-500">
