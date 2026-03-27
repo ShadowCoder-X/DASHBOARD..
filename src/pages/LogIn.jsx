@@ -3,41 +3,43 @@ import { Link } from "react-router-dom";
 import devhub from "../assets/devhub.png";
 
 function Login() {
-  const [form, setForm] = useState({
-    email: "",
-    password: "",
-  });
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
-  function handleChange(e) {
-    const { name, value, type, checked } = e.target;
-    setForm({
-      ...form,
-      [name]: type === "checkbox" ? checked : value,
-    });
-  }
+  const validateEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
-  async function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    try {
-      const res = await fetch(
-        "https://simple-crud-backend-6o49.onrender.com/api/v1/auth/login",
-        {
-          method: "POST",
-          header: { "Content-Type": "Application/json" },
-          body: JSON.stringify({
-            email: form.email,
-            password: form.password,
-          }),
-        },
-      );
-
-      const data = await res.json();
-      console.log(data);
-    } catch (err) {
-      console.error(err);
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address");
+    } else {
+      setError("");
+      console.log("Form submitted:", email);
     }
-  }
+
+    // try {
+    //   const res = await fetch(
+    //     "https://simple-crud-backend-6o49.onrender.com/api/v1/auth/login",
+    //     {
+    //       method: "POST",
+    //       header: { "Content-Type": "Application/json" },
+    //       body: JSON.stringify({
+    //         email: form.email,
+    //         password: form.password,
+    //       }),
+    //     },
+    //   );
+
+    //   const data = await res.json();
+    //   console.log(data);
+    // } catch (err) {
+    //   console.error(err);
+    // }
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center p-30 bg-gray-50">
@@ -60,18 +62,19 @@ function Login() {
           <div className="mb-4">
             <label for="email">Email </label>
             <input
-              type="text"
+              type="email"
               name="email"
-              placeholder="you@example.com"
-              value={form.email}
-              onChange={handleChange}
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="w-full py-2 px-3 rounded-xl bg-gray-100"
               required
             />
           </div>
 
+          {error && <p>{error}</p>}
           <div>
-            <div className="flex flex- cols justify-between">
+            <div className="flex flex-cols justify-between">
               <label for="password">Password: </label>
 
               <Link
@@ -86,14 +89,17 @@ function Login() {
               type="password"
               name="password"
               placeholder="Password"
-              value={form.password}
-              onChange={handleChange}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="w-full py-2 px-3 rounded-xl bg-gray-100"
               required
             />
           </div>
 
-          <button className=" mt-3 mb-3 w-full bg-slate-900 text-white py-3 px-5 rounded-2xl cursor-pointer hover:bg-zinc-700">
+          <button
+            type="submit"
+            className=" mt-3 mb-3 w-full bg-slate-900 text-white py-3 px-5 rounded-2xl cursor-pointer hover:bg-zinc-700"
+          >
             Sign In
           </button>
 

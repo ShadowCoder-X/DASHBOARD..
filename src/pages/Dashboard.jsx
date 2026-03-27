@@ -1,5 +1,15 @@
 import React from "react";
-// import devhub from "../assets/devhub.pnh";
+// import devhub from "../assets/devhub.png";
+import hand from "../assets/hand.png";
+import graduation from "../assets/graduation.png";
+import book from "../assets/book.png";
+import clock from "../assets/clock.png";
+import certificate2 from "../assets/certificate2.png";
+import rate from "../assets/rate.png";
+import scan from "../assets/scan.png";
+import star from "../assets/star.png";
+import message from "../assets/message.png";
+import calendar from "../assets/calendar.png";
 
 function Dashboard() {
   return (
@@ -11,16 +21,24 @@ function Dashboard() {
         <img src={devhub} alt="Devhub icon" className="w-13 h-13" /> 
       </div> */}
 
-      <div className="mb-10">
-        <div className="bg-blue-700 border-2 rounded-2xl text-white p-8 text-left">
-          <h1 className="text-3xl font-bold font-sans mb-3">
-            Welcome back, John Doe!
-          </h1>
-          <p className=" ">Here's what's happening with your learning today</p>
+      <div className="mb-10 bg-blue-700 border-2 rounded-2xl flex justify-between">
+        <div className="flex">
+          <div className="text-white p-8 text-left ">
+            <h1 className="text-3xl font-bold font-sans mb-3">
+              Welcome back, John Doe!
+            </h1>
+            <p className="font-light">
+              Here's what's happening with your learning today
+            </p>
+          </div>
+
+          <div>
+            <img src={hand} alt="Waving hand" className="w-12 h-12 mt-8" />
+          </div>
         </div>
 
         <div>
-          <img src="" alt="Graduation Badge" />
+          <img src={graduation} alt="Graduation Badge" />
         </div>
       </div>
 
@@ -32,7 +50,7 @@ function Dashboard() {
           </div>
 
           <div>
-            <img src="" alt="Opened Book" />
+            <img src={book} alt="Opened Book" />
           </div>
         </div>
 
@@ -43,7 +61,7 @@ function Dashboard() {
           </div>
 
           <div>
-            <img src="" alt="Clock" />
+            <img src={clock} alt="Clock" />
           </div>
         </div>
 
@@ -54,7 +72,7 @@ function Dashboard() {
           </div>
 
           <div>
-            <img src="" alt="Certificate Badge" />
+            <img src={certificate2} alt="Certificate Badge" />
           </div>
         </div>
 
@@ -65,7 +83,7 @@ function Dashboard() {
           </div>
 
           <div>
-            <img src="" alt="Rate Flow" />
+            <img src={rate} alt="Rate Flow" />
           </div>
         </div>
       </div>
@@ -74,7 +92,7 @@ function Dashboard() {
         <div className="flex justify-between mb-10 ">
           <div>
             <div>
-              <img src="" alt="finger print" />
+              <img src={scan} alt="Scan" />
             </div>
             <div>
               <h3>Learning Goals</h3>
@@ -121,7 +139,7 @@ function Dashboard() {
         <div className="border-2 rounded-2xl bg-white p-5">
           <div className="flex mb-9">
             <div>
-              <img src="" alt="Rate flow" />
+              <img src={rate} alt="Rate flow" />
             </div>
 
             <div>
@@ -134,7 +152,7 @@ function Dashboard() {
 
           <div className="flex mb-5">
             <div>
-              <img src="" alt="Certificate" />
+              <img src={certificate2} alt="Certificate" />
             </div>
 
             <div>
@@ -145,7 +163,7 @@ function Dashboard() {
 
           <div className="flex mb-5">
             <div>
-              <img src="" alt="Opened Book" />
+              <img src={book} alt="Opened Book" />
             </div>
 
             <div>
@@ -158,7 +176,7 @@ function Dashboard() {
 
           <div className="flex mb-5">
             <div>
-              <img src="" alt="Star Badge" />
+              <img src={star} alt="Star Badge" />
             </div>
 
             <div>
@@ -169,7 +187,7 @@ function Dashboard() {
 
           <div className="flex mb-15">
             <div>
-              <img src="" alt="Notification icon" />
+              <img src={message} alt="Notification icon" />
             </div>
 
             <div>
@@ -184,7 +202,7 @@ function Dashboard() {
         <div className="border-2 rounded-2xl bg-white p-5">
           <div className="flex mb-9">
             <div>
-              <img src="" alt="Calendar bar" />
+              <img src={calendar} alt="Calendar bar" />
             </div>
 
             <div>
@@ -195,7 +213,7 @@ function Dashboard() {
 
           <div className="flex border-2 rounded-2xl">
             <div>
-              <img src="" alt="Calender" />
+              <img src={calendar} alt="Calender" />
             </div>
 
             <div>
@@ -207,7 +225,7 @@ function Dashboard() {
 
           <div className="flex border-2 rounded-2xl">
             <div>
-              <img src="" alt="Calender" />
+              <img src={calendar} alt="Calender" />
             </div>
 
             <div>
@@ -219,7 +237,7 @@ function Dashboard() {
 
           <div className="flex border-2 rounded-2xl">
             <div>
-              <img src="" alt="Calender" />
+              <img src={calendar} alt="Calender" />
             </div>
 
             <div>
