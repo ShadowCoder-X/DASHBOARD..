@@ -4,8 +4,10 @@ import hand from "../assets/hand.png";
 import graduation from "../assets/graduation.png";
 import book from "../assets/book.png";
 import clock from "../assets/clock.png";
-import certificate2 from "../assets/certificate2.png";
-import rate from "../assets/rate.png";
+import stamp from "../assets/stamp.png";
+import chart from "../assets/chart.png";
+import chart2 from "../assets/chart2.png";
+import certificate from "../assets/certificate.png";
 import scan from "../assets/scan.png";
 import star from "../assets/star.png";
 import message from "../assets/message.png";
@@ -43,59 +45,63 @@ function Dashboard() {
       </div>
 
       <div className="flex gap-5 mb-10">
-        <div className="border-2 w-full max-w-100 bg-white rounded-2xl">
-          <div className="p-5 text-left ">
+        <div className="border-2 w-full max-w-100 bg-white rounded-2xl flex justify-between p-5">
+          <div className=" text-left ">
             <p className="text-gray-500 text-sm">Courses in Progress</p>
             <h1 className="text-3xl font-bold">3</h1>
           </div>
 
           <div>
-            <img src={book} alt="Opened Book" />
+            <img src={book} alt="Opened Book" className="w-12 h-12" />
           </div>
         </div>
 
-        <div className="border-2 w-full max-w-100 bg-white rounded-2xl">
-          <div className="p-5 text-left ">
+        <div className="border-2 w-full max-w-100 bg-white rounded-2xl flex justify-between p-5">
+          <div className=" text-left ">
             <p className="text-gray-500 text-sm">Hours Learned</p>
             <h1 className="text-3xl font-bold">48</h1>
           </div>
 
           <div>
-            <img src={clock} alt="Clock" />
+            <img src={clock} alt="Clock" className="w-12 h-12" />
           </div>
         </div>
 
-        <div className="border-2 w-full max-w-100 bg-white rounded-2xl">
-          <div className="p-5 text-left ">
+        <div className="border-2 w-full max-w-100 bg-white rounded-2xl flex justify-between p-5 ">
+          <div className="text-left ">
             <p className="text-gray-500 text-sm ">Certificate Earned</p>
             <h1 className="text-3xl font-bold">5</h1>
           </div>
 
           <div>
-            <img src={certificate2} alt="Certificate Badge" />
+            <img
+              src={certificate}
+              alt="Certificate Badge"
+              className="w-12 h-12"
+            />
           </div>
         </div>
 
-        <div className=" border-2 w-full max-w-100 bg-white rounded-2xl">
-          <div className="p-5 text-left ">
+        <div className=" border-2 w-full max-w-100 bg-white rounded-2xl flex justify-between p-5 ">
+          <div className="text-left ">
             <p className="text-gray-500 text-sm">Current Streak</p>
             <h1 className="text-3xl font-bold">12 days</h1>
           </div>
 
           <div>
-            <img src={rate} alt="Rate Flow" />
+            <img src={chart2} alt="Chart Arrow up" className="w-12 h-12" />
           </div>
         </div>
       </div>
 
-      <div className="bg-sky-50 mb-10 p-10 rounded-2xl border-2">
+      <div className="bg-zinc-50 mb-10 p-10 rounded-2xl border-2">
         <div className="flex justify-between mb-10 ">
           <div>
             <div>
-              <img src={scan} alt="Scan" />
+              <img src={scan} alt="Scan" className="w-12 h-12" />
             </div>
             <div>
-              <h3>Learning Goals</h3>
+              <h3 className="font-medium">Learning Goals</h3>
               <p className="text-gray-500">Track your monthly objectives</p>
             </div>
           </div>
@@ -106,7 +112,7 @@ function Dashboard() {
         </div>
 
         <div className="flex gap-4 ">
-          <div className="border-2 rounded-2xl bg-white p-4">
+          <div className="border-2 rounded-2xl bg-white p-4 w-full max-w-100">
             <h2 className="font-medium">Complete React Advanced Course</h2>
 
             <div className="flex justify-around">
@@ -115,7 +121,7 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="border-2 rounded-2xl bg-white p-4">
+          <div className="border-2 rounded-2xl bg-white p-4 w-full max-w-100">
             <h2 className="font-medium">Earn 3 Certificate</h2>
 
             <div className="flex justify-around">
@@ -124,7 +130,7 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="border-2 rounded-2xl bg-white p-4">
+          <div className="border-2 rounded-2xl bg-white p-4 w-full max-w-100">
             <h2 className="font-medium">Study 50 Hours This Month</h2>
 
             <div className="flex justify-around">
@@ -135,11 +141,11 @@ function Dashboard() {
         </div>
       </div>
 
-      <div className="flex gap-4 border-2 rounded-2xl p-5">
-        <div className="border-2 rounded-2xl bg-white p-5">
-          <div className="flex mb-9">
+      <div className="flex gap-4 ">
+        <div className="border-2 border-gray-100 rounded-2xl bg-white p-5 w-full">
+          <div className="flex mb-9 gap-3">
             <div>
-              <img src={rate} alt="Rate flow" />
+              <img src={chart} alt="Rate flow" className="w-7 h-7" />
             </div>
 
             <div>
@@ -150,9 +156,9 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="flex mb-5">
+          <div className="flex border-2 rounded-2xl p-4 gap-3 mb-3 ">
             <div>
-              <img src={certificate2} alt="Certificate" />
+              <img src={stamp} alt="Certificate" className="w-12 h-12" />
             </div>
 
             <div>
@@ -161,9 +167,9 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="flex mb-5">
+          <div className="flex  p-4 gap-3 mb-3">
             <div>
-              <img src={book} alt="Opened Book" />
+              <img src={book} alt="Opened Book" className="w-12 h-12" />
             </div>
 
             <div>
@@ -174,9 +180,9 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="flex mb-5">
+          <div className="flex p-4 gap-3 mb-3">
             <div>
-              <img src={star} alt="Star Badge" />
+              <img src={star} alt="Star Badge" className="w-7 h-7" />
             </div>
 
             <div>
@@ -185,9 +191,9 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="flex mb-15">
+          <div className="flex p-4 gap-3 mb-3">
             <div>
-              <img src={message} alt="Notification icon" />
+              <img src={message} alt="Notification icon" className="w-7 h-7" />
             </div>
 
             <div>
@@ -199,10 +205,10 @@ function Dashboard() {
           </div>
         </div>
 
-        <div className="border-2 rounded-2xl bg-white p-5">
-          <div className="flex mb-9">
+        <div className="border-2 border-gray-100 rounded-2xl bg-white p-5 w-full ">
+          <div className="flex mb-9 gap-3 ">
             <div>
-              <img src={calendar} alt="Calendar bar" />
+              <img src={calendar} alt="Calendar bar" className="w-7 h-7" />
             </div>
 
             <div>
@@ -211,9 +217,9 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="flex border-2 rounded-2xl">
+          <div className="flex border-2 rounded-2xl p-4 gap-3 mb-3">
             <div>
-              <img src={calendar} alt="Calender" />
+              <img src={calendar} alt="Calender" className="w-12 h-12" />
             </div>
 
             <div>
@@ -223,9 +229,9 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="flex border-2 rounded-2xl">
+          <div className="flex border-2 rounded-2xl p-4 gap-3 mb-3">
             <div>
-              <img src={calendar} alt="Calender" />
+              <img src={calendar} alt="Calender" className="w-12 h-12" />
             </div>
 
             <div>
@@ -235,9 +241,13 @@ function Dashboard() {
             </div>
           </div>
 
-          <div className="flex border-2 rounded-2xl">
+          <div className="flex border-2 rounded-2xl p-4 gap-3 ">
             <div>
-              <img src={calendar} alt="Calender" />
+              <img
+                src={calendar}
+                alt="Calender"
+                className="w-12 h-12 text-white bg-blue-500"
+              />
             </div>
 
             <div>
