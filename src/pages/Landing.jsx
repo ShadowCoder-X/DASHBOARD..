@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import devhub from "../assets/devhub.png";
-import LogIn from "../layouts/LogIn";
+import LogIn from "../pages/LogIn";
 import expert from "../assets/expert.png";
 import flexible from "../assets/flexible.png";
 import certificate from "../assets/certificate.png";

@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from "./pages/Landing";
-import LogIn from "./layouts/LogIn";
-import SignUp from "./layouts/SignUp";
-import ForgotPassword from "./layouts/ForgotPassword";
+import LogIn from "./pages/LogIn";
+import SignUp from "./pages/SignUp";
+import ForgotPassword from "./pages/ForgotPassword";
 import Dashboard from "./pages/Dashboard";
 
 function App() {
