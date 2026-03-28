@@ -1,131 +1,134 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import devhub from "../assets/devhub.png";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
+  const navigate = useNavigate();
   const validateEmail = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
+}
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const handleSubmit = (e) => {
+  e.preventDefault();
 
-    if (!validateEmail(email)) {
-      setError("Please enter a valid email address");
-    } else {
-      setError("");
-      console.log("Form submitted:", email);
-    }
+  // navigate("/dashboard");
 
-    // try {
-    //   const res = await fetch(
-    //     "https://simple-crud-backend-6o49.onrender.com/api/v1/auth/login",
-    //     {
-    //       method: "POST",
-    //       header: { "Content-Type": "Application/json" },
-    //       body: JSON.stringify({
-    //         email: form.email,
-    //         password: form.password,
-    //       }),
-    //     },
-    //   );
+  if (!validateEmail(email)) {
+    setError("Please enter a valid email address");
+  } else {
+    setError("");
+    console.log("Form submitted:", email);
+  }
 
-    //   const data = await res.json();
-    //   console.log(data);
-    // } catch (err) {
-    //   console.error(err);
-    // }
-  };
+  // try {
+  //   const res = await fetch(
+  //     "https://simple-crud-backend-6o49.onrender.com/api/v1/auth/login",
+  //     {
+  //       method: "POST",
+  //       header: { "Content-Type": "Application/json" },
+  //       body: JSON.stringify({
+  //         email: form.email,
+  //         password: form.password,
+  //       }),
+  //     },
+  //   );
 
-  return (
-    <div className="min-h-screen flex flex-col items-center p-30 bg-gray-50">
-      <div className="flex gap-3">
-        <h2 className="text-3xl p-5 font-semibold  text-center ">DevHub</h2>
-        <img src={devhub} alt="Devhub icon" className="w-13 h-13" />
-      </div>
-      <form
-        onSubmit={handleSubmit}
-        className="w-full p-6 text-left mb-6  bg-white rounded-2xl font-medium max-w-125"
-      >
-        <h1 className="mb-1 text-lg font-semibold text-gray-800 ">
-          Welcome Back
-        </h1>
-        <p className="mb-4 text-sm text-gray-500">
-          Sign in to your account to continue learning
-        </p>
+  //   const data = await res.json();
+  //   console.log(data);
+  // } catch (err) {
+  //   console.error(err);
+  // }
+};
 
-        <div className="text-left">
-          <div className="mb-4">
-            <label for="email">Email </label>
-            <input
-              type="email"
-              name="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="w-full py-2 px-3 rounded-xl bg-gray-100"
-              required
-            />
-          </div>
+return (
+  <div className="min-h-screen flex flex-col items-center p-30 bg-gray-50">
+    <div className="flex gap-3">
+      <h2 className="text-3xl p-5 font-semibold  text-center ">DevHub</h2>
+      <img src={devhub} alt="Devhub icon" className="w-13 h-13" />
+    </div>
+    <form
+      onSubmit={handleSubmit}
+      className="w-full p-6 text-left mb-6  bg-white rounded-2xl font-medium max-w-125"
+    >
+      <h1 className="mb-1 text-lg font-semibold text-gray-800 ">
+        Welcome Back
+      </h1>
+      <p className="mb-4 text-sm text-gray-500">
+        Sign in to your account to continue learning
+      </p>
 
-          {error && <p>{error}</p>}
-          <div>
-            <div className="flex flex-cols justify-between">
-              <label for="password">Password: </label>
+      <div className="text-left">
+        <div className="mb-4">
+          <label for="email">Email </label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-full py-2 px-3 rounded-xl bg-gray-100"
+            required
+          />
+        </div>
 
-              <Link
-                to="/forgotpassword"
-                className="text-sm text-sky-500 font-medium hover:underline"
-              >
-                Forgot Password?
-              </Link>
-            </div>
+        {error && <p>{error}</p>}
+        <div>
+          <div className="flex flex-cols justify-between">
+            <label for="password">Password: </label>
 
-            <input
-              type="password"
-              name="password"
-              placeholder="Password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="w-full py-2 px-3 rounded-xl bg-gray-100"
-              required
-            />
-          </div>
-
-          <button
-            type="submit"
-            className=" mt-3 mb-3 w-full bg-slate-900 text-white py-3 px-5 rounded-2xl cursor-pointer hover:bg-zinc-700"
-          >
-            Sign In
-          </button>
-
-          <div className="text-center ">
-            <span className="text-sm mt-3 text-gray-500">
-              Don't have an account?
-            </span>{" "}
             <Link
-              // to="/signup"
-              to="/dashboard"
-              className="text-blue-500 hover:underline"
+              to="/forgotpassword"
+              className="text-sm text-sky-500 font-medium hover:underline"
             >
-              Sign Up
+              Forgot Password?
             </Link>
           </div>
-        </div>
-      </form>
 
-      <Link
-        to="/"
-        className="text-sm text-gray-500 hover:underline hover:bg-blue-100 "
-      >
-        Back to home
-      </Link>
-    </div>
-  );
-}
+          <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="w-full py-2 px-3 rounded-xl bg-gray-100"
+            required
+          />
+        </div>
+
+        <button
+          type="submit"
+          className=" mt-3 mb-3 w-full bg-slate-900 text-white py-3 px-5 rounded-2xl cursor-pointer hover:bg-zinc-700"
+        >
+          Sign In
+        </button>
+
+        <div className="text-center ">
+          <span className="text-sm mt-3 text-gray-500">
+            Don't have an account?
+          </span>{" "}
+          <Link
+            to="/signup"
+            // to="/dashboard"
+            className="text-blue-500 hover:underline"
+          >
+            Sign Up
+          </Link>
+        </div>
+      </div>
+    </form>
+
+    <Link
+      to="/"
+      className="text-sm text-gray-500 hover:underline hover:bg-blue-100 "
+    >
+      Back to home
+    </Link>
+  </div>
+);
 
 export default Login;
