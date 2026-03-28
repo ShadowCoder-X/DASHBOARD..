@@ -113,7 +113,9 @@ function Dashboard() {
             </div>
 
             <div>
-              <p className="text-blue-500 flex ">View All</p>
+              <p className="text-blue-500 hover:underline hover:bg-blue-100">
+                View All
+              </p>
             </div>
           </div>
 
@@ -258,7 +260,7 @@ function Dashboard() {
                 <img
                   src={calendar}
                   alt="Calender"
-                  className="w-12 h-12 text-white bg-blue-500"
+                  className="w-12 h-12 text-white "
                 />
               </div>
 
