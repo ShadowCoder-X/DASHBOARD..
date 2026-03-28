@@ -3,27 +3,32 @@ import { Link } from "react-router-dom";
 import devhub from "../assets/devhub.png";
 import { useNavigate } from "react-router-dom";
 
+const navigate = useNavigate();
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-  const navigate = useNavigate();
-  const validateEmail = (email) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-  };
+
+  // con validateEmail = (email) => {
+  //   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  // };
 }
 
 const handleSubmit = (e) => {
   e.preventDefault();
 
-  // navigate("/dashboard");
-
-  if (!validateEmail(email)) {
+  if (!email.include("@")) {
     setError("Please enter a valid email address");
   } else {
     setError("");
     console.log("Form submitted:", email);
   }
+
+  if (password.lenght < 6) {
+    setError("Password must be at least 6 characters");
+  }
+
+  navigate("/dashboard");
 
   // try {
   //   const res = await fetch(

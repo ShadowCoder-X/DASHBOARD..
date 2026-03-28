@@ -150,7 +150,7 @@ function Dashboard() {
         <div className="flex gap-4 ">
           <div className="border-2 border-gray-100 rounded-2xl bg-white p-5 w-full">
             <div className="flex mb-9 gap-3">
-              <div>
+              <div className="bg-red-50 border-none rounded-2xl">
                 <img src={chart} alt="Rate flow" className="w-7 h-7" />
               </div>
 
@@ -163,7 +163,7 @@ function Dashboard() {
             </div>
 
             <div className="flex p-4 gap-3 mb-3 ">
-              <div>
+              <div className="bg-red-50 border-none rounded-2xl">
                 <img src={stamp} alt="Certificate" className="w-14 h-12" />
               </div>
 
@@ -176,7 +176,7 @@ function Dashboard() {
             </div>
 
             <div className="flex  p-4 gap-3 mb-3">
-              <div>
+              <div className="bg-red-50 border-none rounded-2xl">
                 <img
                   src={book}
                   alt="Opened npm run devBook"
@@ -193,7 +193,7 @@ function Dashboard() {
             </div>
 
             <div className="flex p-4 gap-3 mb-3">
-              <div>
+              <div className="bg-red-50 border-none rounded-2xl">
                 <img src={star} alt="Star Badge" className="w-7 h-7" />
               </div>
 
@@ -204,12 +204,8 @@ function Dashboard() {
             </div>
 
             <div className="flex p-4 gap-3 mb-3">
-              <div>
-                <img
-                  src={message}
-                  alt="Notification icon"
-                  className="w-7 h-7"
-                />
+              <div className="bg-red-50 border-none rounded-2xl">
+                <img src={message} alt="Message icon" className="w-7 h-7" />
               </div>
 
               <div>
