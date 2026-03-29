@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import devhub from "../assets/devhub.png";
+import Button from "../component/Button1";
 import { useNavigate } from "react-router-dom";
+import Input from "../component/Input";
+import Logo from "../component/Logo";
 
 function Login() {
   const navigate = useNavigate();
@@ -48,10 +51,8 @@ function Login() {
 
   return (
     <div className="min-h-screen flex flex-col items-center p-30 bg-gray-50">
-      <div className="flex gap-3">
-        <h2 className="text-3xl p-5 font-semibold  text-center ">DevHub</h2>
-        <img src={devhub} alt="Devhub icon" className="w-13 h-13" />
-      </div>
+      <Logo />
+
       <form
         onSubmit={handleSubmit}
         className="w-full p-6 text-left mb-6  bg-white rounded-2xl font-medium max-w-125"
@@ -64,22 +65,20 @@ function Login() {
         </p>
 
         <div className="text-left">
-          <div className="mb-4">
-            <label for="email">Email </label>
-            <input
-              type="email"
-              name="email"
+          <div>
+            <Input
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full py-2 px-3 rounded-xl bg-gray-100"
-              required
             />
           </div>
+          <Input />
+
+          {error && <p>{error}</p>}
 
           <div>
             <div className="flex flex-cols justify-between">
-              <label for="password">Password: </label>
+              <label htmlFor="password">Password: </label>
 
               <Link
                 to="/forgotpassword"
@@ -100,24 +99,13 @@ function Login() {
             />
           </div>
 
-          {error && <p>{error}</p>}
-
-          <button
-            type="submit"
-            className=" mt-3 mb-3 w-full bg-slate-900 text-white py-3 px-5 rounded-2xl cursor-pointer hover:bg-zinc-700"
-          >
-            Sign In
-          </button>
+          <Button />
 
           <div className="text-center ">
             <span className="text-sm mt-3 text-gray-500">
               Don't have an account?
             </span>{" "}
-            <Link
-              to="/signup"
-              // to="/dashboard"
-              className="text-blue-500 hover:underline"
-            >
+            <Link to="/signup" className="text-blue-500 hover:underline">
               Sign Up
             </Link>
           </div>

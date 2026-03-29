@@ -1,7 +1,6 @@
 import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import devhub from "../assets/devhub.png";
-import LogIn from "../pages/LogIn";
+import Navbar from "../component/Navbar";
 import expert from "../assets/expert.png";
 import flexible from "../assets/flexible.png";
 import certificate from "../assets/certificate.png";
@@ -9,31 +8,7 @@ import certificate from "../assets/certificate.png";
 function Landing() {
   return (
     <div className="text-center">
-      <div className="sticky top-0 flex justify-around w-full p-4 border-2  bg-white">
-        <div className=" flex gap-4">
-          <Link to="" className="text-4xl font-bold ">
-            {" "}
-            DevHub{" "}
-          </Link>
-          <img src={devhub} alt="Devhub icon" className="w-13 h-13" />
-        </div>
-
-        <nav className=" flex ">
-          <Link
-            to="/login"
-            className=" hover:bg-gray-300 bg-white hover:underline rounded-xl text-black py-3 px-3 font-mediun w-full sm:w-auto gap-4"
-          >
-            Log In{" "}
-          </Link>
-
-          <Link
-            to="/signup"
-            className="hover:bg-zinc-700 py-3 px-3 hover:underline bg-slate-900 rounded-xl text-white font-medium w-full sm:w-auto"
-          >
-            Sign Up{" "}
-          </Link>
-        </nav>
-      </div>
+      <Navbar />
 
       <div className="bg-gray-50 py-20 px-4 text-center flex-col items-center justify-center  ">
         <div className=" max-w-3xl w-full mx-auto space-y-6 ">

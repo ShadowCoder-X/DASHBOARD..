@@ -2,8 +2,11 @@ import user_icon from "../assets/user.png";
 import email_icon from "../assets/email.png";
 import password_icon from "../assets/password.png";
 import { useState } from "react";
+import Button from "../component/Button2";
 import { Link } from "react-router-dom";
 import devhub from "../assets/devhub.png";
+import Button2 from "../component/Button2";
+import Logo from "../component/Logo";
 
 function SignUp() {
   const [form, setForm] = useState({
@@ -51,10 +54,8 @@ function SignUp() {
 
   return (
     <div className="min-h-screen flex flex-col items-center p-20 bg-gray-50">
-      <div className="flex gap-3">
-        <h1 className="text-4xl font-bold p-5">DevHub</h1>
-        <img src={devhub} alt="Devhub icon" className="w-13 h-13" />
-      </div>
+      <Logo />
+
       <form
         onSubmit={handleSubmit}
         className="w-full mb-6 p-6 text-left bg-white rounded-2xl font-medium max-w-125"
@@ -123,14 +124,7 @@ function SignUp() {
             />
           </div>
 
-          <div className=" mt-3 mb-3 flex ">
-            <button
-              to="/dashboard"
-              className="cursor-pointer w-full text-center bg-slate-900 text-white py-3 rounded-2xl hover:bg-zinc-700"
-            >
-              Create Account
-            </button>
-          </div>
+          <Button2 />
 
           <div className="text-center mt-3">
             <span className="text-sm text-gray-500">
